@@ -1,1 +1,5 @@
 timezone: "America/Chicago"
+collections:
+  books:
+    output: true
+  apps:

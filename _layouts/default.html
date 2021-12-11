@@ -1,17 +1,23 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/static/style.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <nav>
-      <a href="/">Free In Fact.</a><br>
+        <div id="breadcrumbs">
+            {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+            <a href="/">Free In Fact</a> <small> a free and open software boutique.</small> {% for crumb in crumbs offset: 1 %} {% if forloop.last %} / {{ page.title }} {% else %} / <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' | replace:'without-plugin/','without-plugins/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>            {% endif %} {% endfor %}
+        </div>
     </nav>
     <h1>{{ page.title }}</h1>
     <section>
-      {{ content }}
+        {{ content }}
     </section>
-  </body>
+</body>
+
 </html>

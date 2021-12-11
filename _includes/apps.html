@@ -1,0 +1,11 @@
+<ul class='apps'>
+    {% for app in site.apps %} {% if app.url != "/apps/index.html" %}
+    <li class='app'>
+        <a href='{{app.ext_url}}'>
+            <h3>{{app.title}}</h3>
+            <img src='{{app.thumbnail}}'>
+            <em>{{app.description}}</em>
+        </a>
+    </li>
+    {% endif %} {% endfor %}
+</ul>

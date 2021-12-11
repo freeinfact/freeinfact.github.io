@@ -1,0 +1,9 @@
+<ul>
+{% for book in site.books %}
+  {% if book.url != "/books/index.html" %}
+    <li>
+      <a href='{{book.url}}'>{{book.title}}</a>
+    </li>
+  {% endif %}
+{% endfor %}
+</ul>
