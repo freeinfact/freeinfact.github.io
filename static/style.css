@@ -1,12 +1,25 @@
 body {
     padding: 2em;
-    font-family: sans-serif;
+    font-family: Roboto, sans-serif;
+}
+
+h2 {
+    margin-top: 2em;
+}
+.logo{
+    font-family: 'Playfair Display', serif;
+    color: inherit;
+    font-size: 3rem;
+    text-decoration: none;
+    display: block;
 }
 
 .apps {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .app img {
@@ -16,7 +29,7 @@ body {
 
 .app {
     border: 1px solid #ebebeb;
-    margin-bottom: 1em;
+    margin:0 1em 1em 0;
 }
 
 .app h3 {

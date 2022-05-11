@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Roboto:wght@300;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="/static/style.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-03YZ6TTHTJ"></script>
@@ -22,7 +25,7 @@
     <nav>
         <div id="breadcrumbs">
             {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
-            <a href="/">Free In Fact</a> <small> a free and open software boutique.</small> {% for crumb in crumbs offset: 1 %} {% if forloop.last %} / {{ page.title }} {% else %} / <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' | replace:'without-plugin/','without-plugins/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>            {% endif %} {% endfor %}
+            <a href="/" class="logo">fif</a> <small> a free and open software boutique.</small> {% for crumb in crumbs offset: 1 %} {% if forloop.last %} / {{ page.title }} {% else %} / <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' | replace:'without-plugin/','without-plugins/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>            {% endif %} {% endfor %}
         </div>
     </nav>
     <h1>{{ page.title }}</h1>
